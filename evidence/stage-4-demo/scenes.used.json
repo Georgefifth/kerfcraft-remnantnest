@@ -1,0 +1,215 @@
+[
+  {
+    "name": "01-waste-problem-slide",
+    "card": {
+      "preset": "swiss",
+      "html": "demo/slides.html",
+      "slide": "#s1"
+    },
+    "duration": 13,
+    "vo": "Every laser-cutter, CNC router, or woodworking job leaves behind irregular 'perforated skeletons' and offcuts. Because free nesting tools assume a fresh sheet, workshops discard usable stock, wasting 35% of material while Deepnest fails on DXF files with 'Error 522'.",
+    "pause": 0.3
+  },
+  {
+    "name": "02-architecture-pipeline-slide",
+    "card": {
+      "preset": "swiss",
+      "html": "demo/slides.html",
+      "slide": "#s2"
+    },
+    "duration": 12,
+    "vo": "We built 'KerfCraft RemnantNest', a 100% client-side computational geometry workbench. It parses DXF and SVG contours in 1.33ms, digitizes scrap cutout holes, and runs a 'three-pass Skyline and NFP solver' with 0.0mm² overlap.",
+    "pause": 0.3
+  },
+  {
+    "name": "03-live-remnant-first-nesting",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "session": "workbench",
+    "actions": [
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"run-nest-btn\"]",
+        "timeout": 15000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"run-nest-btn\"]",
+        "__focus": [
+          1648,
+          35.5
+        ]
+      },
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"status-banner\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "spotlight",
+        "sel": "[data-testid=\"collision-verification-badge\"]",
+        "label": "★ 0.0 mm² OVERLAP VERIFIED",
+        "ms": 2000,
+        "__focus": [
+          1210.9,
+          392.1
+        ]
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid^=\"save-offcut-btn-\"]",
+        "__focus": [
+          889.2,
+          988.2
+        ]
+      },
+      {
+        "type": "wait",
+        "ms": 2000,
+        "__focus": null
+      }
+    ],
+    "vo": "In the live workbench, we pack a 14-part 'FPV drone kit' onto a perforated acrylic remnant in 24ms, hitting 56.5% yield, saving $26.61, and cataloging a 'new offcut' to our bin.",
+    "pause": 0.3
+  },
+  {
+    "name": "04-live-dxf-import-and-scrap-tracer",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "session": "workbench",
+    "actions": [
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"open-vector-importer-btn\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"open-vector-importer-btn\"]",
+        "__focus": [
+          332,
+          246.7
+        ]
+      },
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"parse-and-add-vector-btn\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"parse-and-add-vector-btn\"]",
+        "__focus": [
+          1600.8,
+          495.1
+        ]
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"open-scrap-tracer-btn\"]",
+        "__focus": [
+          592.6,
+          245
+        ]
+      },
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"trace-preset-laser_skeleton\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"trace-preset-laser_skeleton\"]",
+        "__focus": [
+          789,
+          443.3
+        ]
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"confirm-add-remnant-btn\"]",
+        "__focus": [
+          1137.4,
+          781.8
+        ]
+      },
+      {
+        "type": "wait",
+        "ms": 2000,
+        "__focus": null
+      }
+    ],
+    "vo": "Our 'local ASCII DXF parser' ingests CAD contours offline with zero cloud servers, while the 'Optical Scrap Tracer' digitizes leftover laser skeletons directly into the active solver queue.",
+    "pause": 0.3
+  },
+  {
+    "name": "05-grain-lock-export-and-audit",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "session": "workbench",
+    "actions": [
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"preset-btn-baltic-birch-cabinet\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"preset-btn-baltic-birch-cabinet\"]",
+        "__focus": [
+          1067.8,
+          173.5
+        ]
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"export-dxf-btn\"]",
+        "__focus": [
+          1017.7,
+          1068.3
+        ]
+      },
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"exported-artifact-preview\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "click",
+        "sel": "[data-testid=\"nav-tab-benchmark\"]",
+        "__focus": [
+          1461.8,
+          31.3
+        ]
+      },
+      {
+        "type": "waitFor",
+        "sel": "[data-testid=\"benchmark-audit-view\"]",
+        "timeout": 10000,
+        "__focus": null
+      },
+      {
+        "type": "wait",
+        "ms": 2400,
+        "__focus": null
+      }
+    ],
+    "vo": "Switching to 'Baltic Birch Plywood' enforces strict 0° and 180° 'wood-grain orientation locks', exports layered 'R12 DXF cut sheets', and audits every shop workload.",
+    "pause": 0.3
+  },
+  {
+    "name": "06-validation-proof-slide",
+    "card": {
+      "preset": "swiss",
+      "html": "demo/slides.html",
+      "slide": "#s3"
+    },
+    "duration": 11,
+    "vo": "Validated across '12 external MIT CAD datasets' and three shop workloads, KerfCraft achieves a 100% pass rate, rescues 3,641cm² of workshop scrap, and saves $152.59 with 'zero overlap'. Rethink fabrication waste with KerfCraft.",
+    "pause": 0.4
+  }
+]

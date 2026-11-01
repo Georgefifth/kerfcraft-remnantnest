@@ -1,0 +1,180 @@
+{
+  "base": "http://127.0.0.1:4399/",
+  "browser": "firefox",
+  "headed": false,
+  "startedAt": "2026-11-01T16:45:53.156Z",
+  "finishedAt": "2026-11-01T16:46:07.005Z",
+  "summary": {
+    "total": 12,
+    "pass": 12,
+    "fail": 0
+  },
+  "results": [
+    {
+      "viewport": "desktop",
+      "id": "S1-first-visit-and-empty-state",
+      "title": "First visit, zero horizontal overflow, actionable empty state, and 1-click preset recovery",
+      "status": "pass",
+      "ms": 1112,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-01-landing-desktop.png",
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-02-empty-state-desktop.png",
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-03-restored-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "S2-core-remnant-nesting-and-export",
+      "title": "Core end-to-end flow: multi-pass remnant-first nesting, offcut cataloging, and SVG/DXF/MD export",
+      "status": "pass",
+      "ms": 1221,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S2-core-remnant-nesting-and-export-core-export-verified-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "S3-local-dxf-svg-importer-and-error-recovery",
+      "title": "Client-side ASCII DXF & SVG contour parser with malformed input error recovery",
+      "status": "pass",
+      "ms": 1037,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S3-local-dxf-svg-importer-and-error-recovery-dxf-invalid-error-desktop.png",
+        "evidence/stage-3-qa/local-run/screens/S3-local-dxf-svg-importer-and-error-recovery-dxf-parsed-success-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "S4-scrap-contour-tracer-and-remnant-bin",
+      "title": "Optical Scrap Contour Tracer modal and Remnant Bin inventory management",
+      "status": "pass",
+      "ms": 949,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S4-scrap-contour-tracer-and-remnant-bin-scrap-tracer-modal-desktop.png",
+        "evidence/stage-3-qa/local-run/screens/S4-scrap-contour-tracer-and-remnant-bin-remnant-bin-inventory-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "S5-grain-lock-kerf-and-validation",
+      "title": "Wood-grain orientation lock, kerf tolerance update, and parametric form validation",
+      "status": "pass",
+      "ms": 944,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S5-grain-lock-kerf-and-validation-invalid-part-width-desktop.png",
+        "evidence/stage-3-qa/local-run/screens/S5-grain-lock-kerf-and-validation-valid-part-added-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "S6-benchmark-audit-and-keyboard-a11y",
+      "title": "Quantitative Waste Benchmark Ledger and keyboard focus accessibility",
+      "status": "pass",
+      "ms": 802,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S6-benchmark-audit-and-keyboard-a11y-benchmark-ledger-desktop.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S1-first-visit-and-empty-state",
+      "title": "First visit, zero horizontal overflow, actionable empty state, and 1-click preset recovery",
+      "status": "pass",
+      "ms": 1086,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-01-landing-mobile.png",
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-02-empty-state-mobile.png",
+        "evidence/stage-3-qa/local-run/screens/S1-first-visit-and-empty-state-03-restored-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S2-core-remnant-nesting-and-export",
+      "title": "Core end-to-end flow: multi-pass remnant-first nesting, offcut cataloging, and SVG/DXF/MD export",
+      "status": "pass",
+      "ms": 1211,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S2-core-remnant-nesting-and-export-core-export-verified-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S3-local-dxf-svg-importer-and-error-recovery",
+      "title": "Client-side ASCII DXF & SVG contour parser with malformed input error recovery",
+      "status": "pass",
+      "ms": 1049,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S3-local-dxf-svg-importer-and-error-recovery-dxf-invalid-error-mobile.png",
+        "evidence/stage-3-qa/local-run/screens/S3-local-dxf-svg-importer-and-error-recovery-dxf-parsed-success-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S4-scrap-contour-tracer-and-remnant-bin",
+      "title": "Optical Scrap Contour Tracer modal and Remnant Bin inventory management",
+      "status": "pass",
+      "ms": 1005,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S4-scrap-contour-tracer-and-remnant-bin-scrap-tracer-modal-mobile.png",
+        "evidence/stage-3-qa/local-run/screens/S4-scrap-contour-tracer-and-remnant-bin-remnant-bin-inventory-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S5-grain-lock-kerf-and-validation",
+      "title": "Wood-grain orientation lock, kerf tolerance update, and parametric form validation",
+      "status": "pass",
+      "ms": 991,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S5-grain-lock-kerf-and-validation-invalid-part-width-mobile.png",
+        "evidence/stage-3-qa/local-run/screens/S5-grain-lock-kerf-and-validation-valid-part-added-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "S6-benchmark-audit-and-keyboard-a11y",
+      "title": "Quantitative Waste Benchmark Ledger and keyboard focus accessibility",
+      "status": "pass",
+      "ms": 834,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/local-run/screens/S6-benchmark-audit-and-keyboard-a11y-benchmark-ledger-mobile.png"
+      ]
+    }
+  ]
+}

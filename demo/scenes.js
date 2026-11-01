@@ -1,0 +1,91 @@
+const APP_URL = "https://georgefifth.github.io/kerfcraft-remnantnest/";
+
+module.exports = [
+  {
+    name: "01-waste-problem-slide",
+    card: {
+      preset: "swiss",
+      html: "demo/slides.html",
+      slide: "#s1",
+    },
+    duration: 13,
+    vo: "Every laser-cutter, CNC router, or woodworking job leaves behind irregular 'perforated skeletons' and offcuts. Because free nesting tools assume a fresh sheet, workshops discard usable stock, wasting 35% of material while Deepnest fails on DXF files with 'Error 522'.",
+    pause: 0.3,
+  },
+  {
+    name: "02-architecture-pipeline-slide",
+    card: {
+      preset: "swiss",
+      html: "demo/slides.html",
+      slide: "#s2",
+    },
+    duration: 12,
+    vo: "We built 'KerfCraft RemnantNest', a 100% client-side computational geometry workbench. It parses DXF and SVG contours in 1.33ms, digitizes scrap cutout holes, and runs a 'three-pass Skyline and NFP solver' with 0.0mm² overlap.",
+    pause: 0.3,
+  },
+  {
+    name: "03-live-remnant-first-nesting",
+    url: APP_URL,
+    session: "workbench",
+    actions: [
+      { type: "waitFor", sel: '[data-testid="run-nest-btn"]', timeout: 15000 },
+      { type: "click", sel: '[data-testid="run-nest-btn"]' },
+      { type: "waitFor", sel: '[data-testid="status-banner"]', timeout: 10000 },
+      {
+        type: "spotlight",
+        sel: '[data-testid="collision-verification-badge"]',
+        label: "★ 0.0 mm² OVERLAP VERIFIED",
+        ms: 2000,
+      },
+      { type: "click", sel: '[data-testid^="save-offcut-btn-"]' },
+      { type: "wait", ms: 2000 },
+    ],
+    vo: "In the live workbench, we pack a 14-part 'FPV drone kit' onto a perforated acrylic remnant in 24ms, hitting 56.5% yield, saving $26.61, and cataloging a 'new offcut' to our bin.",
+    pause: 0.3,
+  },
+  {
+    name: "04-live-dxf-import-and-scrap-tracer",
+    url: APP_URL,
+    session: "workbench",
+    actions: [
+      { type: "waitFor", sel: '[data-testid="open-vector-importer-btn"]', timeout: 10000 },
+      { type: "click", sel: '[data-testid="open-vector-importer-btn"]' },
+      { type: "waitFor", sel: '[data-testid="parse-and-add-vector-btn"]', timeout: 10000 },
+      { type: "click", sel: '[data-testid="parse-and-add-vector-btn"]' },
+      { type: "click", sel: '[data-testid="open-scrap-tracer-btn"]' },
+      { type: "waitFor", sel: '[data-testid="trace-preset-laser_skeleton"]', timeout: 10000 },
+      { type: "click", sel: '[data-testid="trace-preset-laser_skeleton"]' },
+      { type: "click", sel: '[data-testid="confirm-add-remnant-btn"]' },
+      { type: "wait", ms: 2000 },
+    ],
+    vo: "Our 'local ASCII DXF parser' ingests CAD contours offline with zero cloud servers, while the 'Optical Scrap Tracer' digitizes leftover laser skeletons directly into the active solver queue.",
+    pause: 0.3,
+  },
+  {
+    name: "05-grain-lock-export-and-audit",
+    url: APP_URL,
+    session: "workbench",
+    actions: [
+      { type: "waitFor", sel: '[data-testid="preset-btn-baltic-birch-cabinet"]', timeout: 10000 },
+      { type: "click", sel: '[data-testid="preset-btn-baltic-birch-cabinet"]' },
+      { type: "click", sel: '[data-testid="export-dxf-btn"]' },
+      { type: "waitFor", sel: '[data-testid="exported-artifact-preview"]', timeout: 10000 },
+      { type: "click", sel: '[data-testid="nav-tab-benchmark"]' },
+      { type: "waitFor", sel: '[data-testid="benchmark-audit-view"]', timeout: 10000 },
+      { type: "wait", ms: 2400 },
+    ],
+    vo: "Switching to 'Baltic Birch Plywood' enforces strict 0° and 180° 'wood-grain orientation locks', exports layered 'R12 DXF cut sheets', and audits every shop workload.",
+    pause: 0.3,
+  },
+  {
+    name: "06-validation-proof-slide",
+    card: {
+      preset: "swiss",
+      html: "demo/slides.html",
+      slide: "#s3",
+    },
+    duration: 11,
+    vo: "Validated across '12 external MIT CAD datasets' and three shop workloads, KerfCraft achieves a 100% pass rate, rescues 3,641cm² of workshop scrap, and saves $152.59 with 'zero overlap'. Rethink fabrication waste with KerfCraft.",
+    pause: 0.4,
+  },
+];

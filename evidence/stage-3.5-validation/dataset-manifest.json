@@ -1,0 +1,110 @@
+[
+  {
+    "filename": "01_basic_lwpolylines.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/lwpolylines.dxf",
+    "license": "MIT",
+    "difficultyTier": "Basic",
+    "description": "External MIT DXF test file with multiple LWPOLYLINE contours",
+    "bytes": 16235,
+    "sha256": "cbc8fbf3016fd7b580f3a077092c63d1903728111f283e9907c774ce94e7a3e4"
+  },
+  {
+    "filename": "02_basic_squircle2.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/squircle2.dxf",
+    "license": "MIT",
+    "difficultyTier": "Basic",
+    "description": "External MIT DXF rounded squircle contour",
+    "bytes": 166502,
+    "sha256": "ecdcd72eb0274db6fb797fcf79cda0ffc6a2015fc14d160e9109c44ba927f306"
+  },
+  {
+    "filename": "03_inter_alu_profile.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/alu-profile.dxf",
+    "license": "MIT",
+    "difficultyTier": "Intermediate",
+    "description": "Real industrial aluminum extrusion profile DXF",
+    "bytes": 376262,
+    "sha256": "b73d4a5671d7d2bdad16f89fa21413f4f89cbd42673f54af97332041fd8e7e8c"
+  },
+  {
+    "filename": "04_inter_openscad_export.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/openscad_export.dxf",
+    "license": "MIT",
+    "difficultyTier": "Intermediate",
+    "description": "OpenSCAD 2D projection DXF export (uses LINE entities)",
+    "bytes": 28956,
+    "sha256": "dfe3b732026b655dc89ad2b985944ccd96d4ab7429f2adb1ccc7df36c8686364"
+  },
+  {
+    "filename": "05_inter_closed_lwpolyline_bug.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/closedlwpolylinebug.dxf",
+    "license": "MIT",
+    "difficultyTier": "Intermediate",
+    "description": "Real user-submitted DXF bug case with closed LWPOLYLINE",
+    "bytes": 24823,
+    "sha256": "8e24d7f34d6532b5b3ab3576e9e44069433400d6f803fdfe828c22ccc11467b2"
+  },
+  {
+    "filename": "06_adv_polylines_legacy.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/polylines.dxf",
+    "license": "MIT",
+    "difficultyTier": "Advanced",
+    "description": "Legacy R12 POLYLINE + VERTEX + SEQEND entity format",
+    "bytes": 167837,
+    "sha256": "af6d2781d7961e531c34e27c7d0f8a4c4b885e579cdcbcd5e5a41766074851a0"
+  },
+  {
+    "filename": "07_adv_arrayed_holes.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/arrayed-holes.dxf",
+    "license": "MIT",
+    "difficultyTier": "Advanced",
+    "description": "Multi-hole plate with CIRCLE and contour entities",
+    "bytes": 18371,
+    "sha256": "29856a0eb2b8412527bef8be612200662ea5bb80fadc8decec1eccf79b8ec058"
+  },
+  {
+    "filename": "08_adv_svgnest_parts.svg",
+    "sourceUrl": "https://raw.githubusercontent.com/Jack000/SVGnest/master/img/logo.svg",
+    "license": "MIT",
+    "difficultyTier": "Advanced",
+    "description": "Real SVG file from Jack000/SVGnest repository",
+    "bytes": 15054,
+    "sha256": "191d2fe8d6d1fe94ee453cb4707003f5bc42c5d2c25a88679fedba9226684f54"
+  },
+  {
+    "filename": "09_edge_1x1_micro_rect.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/1x1rectangle.dxf",
+    "license": "MIT",
+    "difficultyTier": "Edge",
+    "description": "1x1 unit micro rectangle below 2mm laser kerf threshold",
+    "bytes": 166058,
+    "sha256": "05b79acc4b1c619813d15e8cb0a041a04d716e8f42ede42373ae6216067e1ae9"
+  },
+  {
+    "filename": "10_negative_empty.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/empty.dxf",
+    "license": "MIT",
+    "difficultyTier": "Negative",
+    "description": "Empty DXF with 0 geometric entities (must be rejected cleanly)",
+    "bytes": 188564,
+    "sha256": "56b9bc2de32b24c7ca3e29071d8cf6c7f9c27df1c936948d48c891ac8fd92c58"
+  },
+  {
+    "filename": "11_negative_texts_only.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/texts.dxf",
+    "license": "MIT",
+    "difficultyTier": "Negative",
+    "description": "DXF containing only TEXT annotations and no cuttable geometry",
+    "bytes": 16528,
+    "sha256": "6c585c0093c1a19180faa58b6977bc48ddb47899d2800bf38807cbca3018416d"
+  },
+  {
+    "filename": "12_adversarial_splines_only.dxf",
+    "sourceUrl": "https://raw.githubusercontent.com/skymakerolof/dxf/develop/test/resources/splineA.dxf",
+    "license": "MIT",
+    "difficultyTier": "Adversarial",
+    "description": "DXF with NURBS SPLINE entity",
+    "bytes": 16199,
+    "sha256": "4f6456eba44b012c250311a0f0205a7bf8f3f844a443820cf7f4e45031b7ef92"
+  }
+]

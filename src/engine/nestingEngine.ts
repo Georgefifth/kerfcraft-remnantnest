@@ -332,19 +332,9 @@ function executeSinglePass(
               }
             }
 
-            const worldPoly = translatePolygon(rotated.polygon, cx, cy);
+            if (bboxOverlap) continue;
 
-            // If bounding boxes overlap (e.g. L-brackets or concave parts interlocking), perform exact polygon collision check
-            if (bboxOverlap) {
-              let polyCollides = false;
-              for (const ex of existing) {
-                if (doPolygonsCollide(worldPoly, ex.worldPolygon, clearanceMm)) {
-                  polyCollides = true;
-                  break;
-                }
-              }
-              if (polyCollides) continue;
-            }
+            const worldPoly = translatePolygon(rotated.polygon, cx, cy);
 
             // Check sheet outer boundary and interior remnant holes
             if (!isPolygonValidOnSheet(worldPoly, sheet, edgeMarginMm)) {

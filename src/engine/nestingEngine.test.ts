@@ -85,4 +85,83 @@ describe('KerfCraft Computational Geometry & Remnant Nesting Engine', () => {
     const mdReport = generateShopAuditReport(result, preset.title);
     expect(mdReport).toContain('PASSED (0.0 mm² collision)');
   });
+
+  it('validates all 12 real-world external CAD files (DXF/SVG across Basic, Intermediate, Advanced, Edge, Negative, Adversarial tiers)', async () => {
+    const fs = await import('node:fs');
+    const path = await import('node:path');
+    const datasetDir = path.resolve('evidence/stage-3.5-validation/datasets');
+    const manifestPath = path.resolve('evidence/stage-3.5-validation/dataset-manifest.json');
+    if (!fs.existsSync(manifestPath)) return;
+
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    const evaluations = [];
+
+    for (const item of manifest) {
+      const fullPath = path.join(datasetDir, item.filename);
+      const rawContent = fs.readFileSync(fullPath, 'utf8');
+      const isSvg = item.filename.endsWith('.svg');
+
+      const t0 = performance.now();
+      const parseRes = isSvg
+        ? parseSvgToParts(rawContent, '3mm Cast Acrylic')
+        : parseDxfToParts(rawContent, '6mm Baltic Birch Plywood');
+      const parseMs = Number((performance.now() - t0).toFixed(2));
+
+      let nestRes = null;
+      if (parseRes.success && parseRes.parts.length > 0) {
+        nestRes = runRemnantAwareNesting(
+          parseRes.parts.slice(0, 15),
+          FABRICATION_PRESETS[0].sheets,
+          {
+            kerfMm: 0.2,
+            partSpacingMm: 2.0,
+            prioritizeRemnants: true,
+          }
+        );
+      }
+
+      const isExpectedNegative = item.difficultyTier === 'Negative';
+
+      const passedExpectation = isExpectedNegative
+        ? !parseRes.success && Boolean(parseRes.error)
+        : parseRes.success &&
+          parseRes.parts.length > 0 &&
+          Boolean(nestRes?.zeroOverlapVerified);
+
+      evaluations.push({
+        filename: item.filename,
+        difficultyTier: item.difficultyTier,
+        sourceUrl: item.sourceUrl,
+        sha256: item.sha256,
+        isExpectedNegative,
+        parseSuccess: parseRes.success,
+        partsExtracted: parseRes.parts.length,
+        warnings: parseRes.warnings,
+        parseError: parseRes.error ?? null,
+        parseMs,
+        nestingTriggered: Boolean(nestRes),
+        partsPlaced: nestRes?.totalPartsPlaced ?? 0,
+        zeroOverlapVerified: nestRes?.zeroOverlapVerified ?? null,
+        yieldPct: nestRes?.overallYieldPct ?? null,
+        passedExpectation,
+      });
+    }
+
+    fs.writeFileSync(
+      path.resolve('evidence/stage-3.5-validation/post-fix-results.json'),
+      JSON.stringify(
+        {
+          evaluatedAt: new Date().toISOString(),
+          totalFiles: evaluations.length,
+          passedCount: evaluations.filter((e) => e.passedExpectation).length,
+          failedCount: evaluations.filter((e) => !e.passedExpectation).length,
+          results: evaluations,
+        },
+        null,
+        2
+      )
+    );
+
+    expect(evaluations.every((e) => e.passedExpectation)).toBe(true);
+  });
 });

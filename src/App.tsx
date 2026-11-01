@@ -1179,8 +1179,8 @@ export function App() {
         )}
       </main>
 
-      {/* Mobile Sticky Bottom Action Bar (390px ergonomic reachability) */}
-      <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 border-t border-[#263240] bg-[#131920]/95 backdrop-blur px-3 py-2 flex items-center justify-between gap-2">
+      {/* Mobile Bottom Action Bar (390px ergonomic reachability without floating mid-screenshot) */}
+      <div className="lg:hidden border-t border-[#263240] bg-[#131920] px-3 py-3 mt-2 flex items-center justify-between gap-2">
         <button
           type="button"
           onClick={handleRunNestSolver}

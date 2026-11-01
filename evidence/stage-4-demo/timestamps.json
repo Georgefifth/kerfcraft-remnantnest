@@ -1,0 +1,192 @@
+[
+  {
+    "idx": 0,
+    "name": "01-waste-problem-slide",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/scene-00.webm",
+    "wallMs": 13469,
+    "trimStart": 0.45,
+    "focus": [],
+    "sfx": []
+  },
+  {
+    "idx": 1,
+    "name": "02-architecture-pipeline-slide",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/scene-01.webm",
+    "wallMs": 12054,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.09
+      }
+    ]
+  },
+  {
+    "idx": 2,
+    "name": "03-live-remnant-first-nesting",
+    "isCard": false,
+    "session": "workbench",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "focus": [
+      {
+        "t": 0.71,
+        "x": 1648,
+        "y": 36
+      },
+      {
+        "t": 3.45,
+        "x": 1211,
+        "y": 392
+      },
+      {
+        "t": 4.11,
+        "x": 889,
+        "y": 988
+      }
+    ],
+    "sfx": [
+      {
+        "type": "click",
+        "t": 0.67
+      },
+      {
+        "type": "whoosh",
+        "t": 1.47
+      },
+      {
+        "type": "click",
+        "t": 4.04
+      }
+    ],
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/session-workbench.webm",
+    "range": [
+      0.61,
+      7.14
+    ]
+  },
+  {
+    "idx": 3,
+    "name": "04-live-dxf-import-and-scrap-tracer",
+    "isCard": false,
+    "session": "workbench",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "focus": [
+      {
+        "t": 0.72,
+        "x": 332,
+        "y": 247
+      },
+      {
+        "t": 1.42,
+        "x": 1601,
+        "y": 495
+      },
+      {
+        "t": 2.06,
+        "x": 593,
+        "y": 245
+      },
+      {
+        "t": 2.64,
+        "x": 789,
+        "y": 443
+      },
+      {
+        "t": 3.27,
+        "x": 1137,
+        "y": 782
+      }
+    ],
+    "sfx": [
+      {
+        "type": "click",
+        "t": 0.67
+      },
+      {
+        "type": "click",
+        "t": 1.33
+      },
+      {
+        "type": "click",
+        "t": 2.02
+      },
+      {
+        "type": "click",
+        "t": 2.6
+      },
+      {
+        "type": "click",
+        "t": 3.21
+      }
+    ],
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/session-workbench.webm",
+    "range": [
+      7.14,
+      13.16
+    ]
+  },
+  {
+    "idx": 4,
+    "name": "05-grain-lock-export-and-audit",
+    "isCard": false,
+    "session": "workbench",
+    "url": "https://georgefifth.github.io/kerfcraft-remnantnest/",
+    "focus": [
+      {
+        "t": 0.69,
+        "x": 1068,
+        "y": 174
+      },
+      {
+        "t": 1.36,
+        "x": 1018,
+        "y": 1068
+      },
+      {
+        "t": 2.05,
+        "x": 1462,
+        "y": 31
+      }
+    ],
+    "sfx": [
+      {
+        "type": "click",
+        "t": 0.63
+      },
+      {
+        "type": "click",
+        "t": 1.29
+      },
+      {
+        "type": "click",
+        "t": 1.95
+      }
+    ],
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/session-workbench.webm",
+    "range": [
+      13.16,
+      18.36
+    ]
+  },
+  {
+    "idx": 5,
+    "name": "06-validation-proof-slide",
+    "isCard": true,
+    "url": null,
+    "file": "/home/yap/Hack/arbiter/evidence/stage-4-demo/raw/scene-05.webm",
+    "wallMs": 11051,
+    "trimStart": 0,
+    "focus": [],
+    "sfx": [
+      {
+        "type": "whoosh",
+        "t": 0.09
+      }
+    ]
+  }
+]

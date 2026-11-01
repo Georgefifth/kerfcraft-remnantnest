@@ -6,3 +6,5 @@ dist
 .env.*
 .vercel
 tsconfig.tsbuildinfo
+evidence/stage-4-demo/demo.work
+evidence/stage-4-demo/raw

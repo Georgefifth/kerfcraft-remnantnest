@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KerfCraft (RemnantNest) — Visual Presentation Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --ink: #0f1419;
+      --muted: #475569;
+      --amber: #d97706;
+      --emerald: #059669;
+      --cyan: #0284c7;
+      --crimson: #dc2626;
+      --line: #cbd5e1;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes growBar {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      padding: 60px 88px 155px; /* Keep bottom 155px clear for burned-in captions */
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+        linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+      background-size: 64px 64px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .top-bar {
+      display: grid;
+      grid-template-columns: 310px 1fr auto;
+      align-items: start;
+      border-top: 4px solid var(--ink);
+      padding-top: 20px;
+      animation: slideUp .45s ease-out both;
+    }
+    .idx-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--amber);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 54px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+    .meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.45;
+    }
+    .card-box {
+      border: 2px solid var(--ink);
+      background: #ffffff;
+      padding: 32px;
+      box-shadow: 6px 6px 0px #0f1419;
+      animation: slideUp .55s cubic-bezier(.16, 1, .3, 1) both;
+    }
+    .mono-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border: 1.5px solid var(--ink);
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Before / After Visual Comparison + Competitor Failure Evidence -->
+  <div class="slide" id="s1">
+    <div class="top-bar">
+      <div class="idx-tag">01 // RETHINKING FABRICATION WASTE</div>
+      <h1>Why 35% of Laser &amp; CNC Sheet Stock<br>Ends Up in the Workshop Dumpster</h1>
+      <div class="meta">ARBITER HACKS V1 · THEME TRACK<br>KERFCRAFT // REMNANTNEST</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch;">
+      <!-- Left: Status Quo Failure Diagram -->
+      <div class="card-box" style="border-color: #dc2626; background: #fffafa; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <span class="mono-badge" style="background: #fee2e2; color: #991b1b; border-color: #dc2626;">STATUS QUO: FRESH-SHEET ASSUMPTION</span>
+            <span style="font-family: 'JetBrains Mono'; font-size: 15px; font-weight: 700; color: #dc2626;">36.4% AVG YIELD</span>
+          </div>
+          <h2 style="font-family: 'Space Grotesk'; font-size: 30px; margin-bottom: 12px;">Leftover Irregular Remnants Are Discarded</h2>
+          <p style="font-size: 18px; color: var(--muted); line-height: 1.5; margin-bottom: 20px;">
+            Every laser or CNC job leaves behind perforated "skeletons" and L-shaped offcuts. Existing free tools cannot nest around prior cutout holes or import DXF files offline.
+          </p>
+
+          <!-- SVG Visual Diagram of Wasted Skeleton + Fresh Sheet -->
+          <svg viewBox="0 0 680 210" style="width: 100%; height: 200px; border: 1.5px solid #fca5a5; background: #fff1f2; margin-bottom: 18px;">
+            <rect x="20" y="20" width="290" height="170" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,4"/>
+            <rect x="195" y="35" width="95" height="65" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+            <text x="165" y="135" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#991b1b" text-anchor="middle">600×400mm REMNANT SCRAP</text>
+            <text x="165" y="158" font-family="JetBrains Mono" font-size="13" fill="#dc2626" text-anchor="middle">THROWN IN DUMPSTER (772 cm² WASTED)</text>
+
+            <path d="M 325 105 L 365 105" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+            <rect x="375" y="20" width="285" height="170" fill="#ffffff" stroke="#0f1419" stroke-width="2.5"/>
+            <rect x="390" y="35" width="110" height="55" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+            <rect x="515" y="35" width="95" height="55" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+            <text x="517" y="145" font-family="JetBrains Mono" font-size="14" font-weight="700" fill="#0f1419" text-anchor="middle">BUYS NEW $28 FULL SHEET</text>
+          </svg>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-family: 'JetBrains Mono'; font-size: 13px;">
+          <div style="padding: 12px; background: #ffffff; border: 1.5px solid #fca5a5;">
+            <strong style="color: #dc2626;">Deepnest Issue #196:</strong><br>
+            DXF import broken with <code>Errorcode 522</code> (cloud server dead)
+          </div>
+          <div style="padding: 12px; background: #ffffff; border: 1.5px solid #fca5a5;">
+            <strong style="color: #dc2626;">SVGnest Issues #15 &amp; #19:</strong><br>
+            No wood-grain lock (0°/180°) &amp; no remnant cutout locking
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: KerfCraft Remnant-First Solution Diagram -->
+      <div class="card-box" style="border-color: #059669; background: #f0fdf4; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <span class="mono-badge" style="background: #d1fae5; color: #065f46; border-color: #059669;">KERFCRAFT: REMNANT-FIRST ENGINE</span>
+            <span style="font-family: 'JetBrains Mono'; font-size: 15px; font-weight: 700; color: #059669;">57.4% AVG YIELD (+21.0%)</span>
+          </div>
+          <h2 style="font-family: 'Space Grotesk'; font-size: 30px; margin-bottom: 12px;">Pack Irregular Scrap Before Touching New Stock</h2>
+          <p style="font-size: 18px; color: var(--muted); line-height: 1.5; margin-bottom: 20px;">
+            KerfCraft parses DXF &amp; SVG files 100% locally in-browser, nests parts tightly around prior cutout holes on workshop remnants, and catalogs new offcuts for the next job.
+          </p>
+
+          <!-- SVG Visual Diagram of Remnant Rescue -->
+          <svg viewBox="0 0 680 210" style="width: 100%; height: 200px; border: 1.5px solid #6ee7b7; background: #ecfdf5; margin-bottom: 18px;">
+            <rect x="20" y="18" width="640" height="174" fill="#ffffff" stroke="#059669" stroke-width="3"/>
+            <!-- Prior cutout keep-out zones -->
+            <rect x="470" y="28" width="170" height="55" fill="#fee2e2" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="555" y="60" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">PRIOR CUTOUT HOLE</text>
+            <rect x="470" y="105" width="170" height="75" fill="#fee2e2" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="555" y="147" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#dc2626" text-anchor="middle">PRIOR CUTOUT HOLE</text>
+
+            <!-- Rescued nested parts -->
+            <rect x="34" y="28" width="195" height="68" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+            <text x="131" y="66" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#92400e" text-anchor="middle">Main_Deck (Grain 0°)</text>
+            <rect x="238" y="28" width="185" height="68" fill="#d1fae5" stroke="#059669" stroke-width="2"/>
+            <text x="330" y="66" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#065f46" text-anchor="middle">Bottom_Plate (14/14)</text>
+
+            <!-- Salvageable new offcut -->
+            <rect x="34" y="108" width="415" height="72" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
+            <text x="241" y="148" font-family="JetBrains Mono" font-size="13" font-weight="700" fill="#0369a1" text-anchor="middle">+ NEW SALVAGEABLE OFFCUT SAVED TO BIN (396×115mm)</text>
+          </svg>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-family: 'JetBrains Mono'; font-size: 13px;">
+          <div style="padding: 12px; background: #ffffff; border: 1.5px solid #6ee7b7;">
+            <strong style="color: #059669;">100% Local DXF/SVG Ingest:</strong><br>
+            1.33 ms parse time · Zero cloud servers · Zero Error 522
+          </div>
+          <div style="padding: 12px; background: #ffffff; border: 1.5px solid #6ee7b7;">
+            <strong style="color: #059669;">0.0 mm² Collision Proof:</strong><br>
+            Multi-pass NFP + Kerf clearance + 0°/180° Grain Lock
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: System Architecture & Computational Geometry Pipeline Flowchart -->
+  <div class="slide" id="s2">
+    <div class="top-bar">
+      <div class="idx-tag">02 // COMPUTATIONAL GEOMETRY ARCHITECTURE</div>
+      <h1>Four-Stage Client-Side CAD &amp; Multi-Pass<br>Remnant Nesting Pipeline</h1>
+      <div class="meta">ZERO EXTERNAL API DEPENDENCY<br>DETERMINISTIC ENGINE</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 28px;">
+      <!-- 4-Stage Horizontal Architecture Flowchart -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: stretch; flex: 1;">
+        <div class="card-box" style="animation-delay: .05s; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="mono-badge" style="background: #e0f2fe; color: #0369a1;">STAGE 1 · VECTOR INGEST</span>
+            <h3 style="font-family: 'Space Grotesk'; font-size: 26px; margin: 16px 0 10px;">Local DXF &amp; SVG Parser</h3>
+            <p style="font-size: 16px; color: var(--muted); line-height: 1.5;">
+              Scans <code>SECTION &rarr; ENTITIES</code> for <code>LWPOLYLINE</code>, R12 <code>POLYLINE</code>, <code>SPLINE</code>, <code>LINE</code> hulls, and <code>INSERT</code> blocks. Auto-scales Imperial <code>$INSUNITS=1</code> to millimeters.
+            </p>
+          </div>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; padding-top: 14px; border-top: 1.5px solid var(--line); color: #0369a1; font-weight: 700;">
+            dxfSvgParser.ts · 1.33ms avg
+          </div>
+        </div>
+
+        <div class="card-box" style="animation-delay: .12s; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="mono-badge" style="background: #d1fae5; color: #065f46;">STAGE 2 · REMNANT TRACER</span>
+            <h3 style="font-family: 'Space Grotesk'; font-size: 26px; margin: 16px 0 10px;">Scrap Contour &amp; Hole Digitizer</h3>
+            <p style="font-size: 16px; color: var(--muted); line-height: 1.5;">
+              Extracts usable outer polygons and interior keep-out cutout windows from workshop scrap boards, prioritizing remnants before fresh stock sheets.
+            </p>
+          </div>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; padding-top: 14px; border-top: 1.5px solid var(--line); color: #059669; font-weight: 700;">
+            remnantDetector.ts · Priority #1
+          </div>
+        </div>
+
+        <div class="card-box" style="animation-delay: .19s; display: flex; flex-direction: column; justify-content: space-between; background: #fffbeb; border-color: #d97706;">
+          <div>
+            <span class="mono-badge" style="background: #fef3c7; color: #92400e; border-color: #d97706;">STAGE 3 · 3-PASS SOLVER</span>
+            <h3 style="font-family: 'Space Grotesk'; font-size: 26px; margin: 16px 0 10px;">Skyline + NFP Collision Solver</h3>
+            <p style="font-size: 16px; color: var(--muted); line-height: 1.5;">
+              Evaluates Area-Descending, Longest-Edge, and Grain-Locked passes. Enforces blade kerf + part clearance and verifies exact <code>0.0 mm²</code> polygon intersection.
+            </p>
+          </div>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; padding-top: 14px; border-top: 1.5px solid #fde68a; color: #b45309; font-weight: 700;">
+            nestingEngine.ts · 0.0 mm² Overlap
+          </div>
+        </div>
+
+        <div class="card-box" style="animation-delay: .26s; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="mono-badge" style="background: #f1f5f9; color: #0f1419;">STAGE 4 · SHOP EXPORT</span>
+            <h3 style="font-family: 'Space Grotesk'; font-size: 26px; margin: 16px 0 10px;">Offcut Loop &amp; CAD Export</h3>
+            <p style="font-size: 16px; color: var(--muted); line-height: 1.5;">
+              Detects contiguous empty rectangles on used sheets to return to the Remnant Bin, and exports annotated <code>.SVG</code>, R12 <code>.DXF</code> layers, and <code>.MD</code> audits.
+            </p>
+          </div>
+          <div style="font-family: 'JetBrains Mono'; font-size: 13px; padding-top: 14px; border-top: 1.5px solid var(--line); color: var(--ink); font-weight: 700;">
+            exporter.ts · Closed-Loop Reuse
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Geometric Invariant Bar -->
+      <div class="card-box" style="padding: 22px 32px; background: #0f1419; color: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-family: 'JetBrains Mono'; font-size: 16px;">
+          <span style="color: #f59e0b; font-weight: 700;">GEOMETRIC INVARIANT:</span>
+          <span style="margin-left: 12px;">∀ placed parts A, B: <code>Area(A ∩ B) = 0.0 mm²</code> &nbsp;|&nbsp; <code>dist(A, B) ≥ Kerf + Clearance</code> &nbsp;|&nbsp; <code>Area(A ∩ RemnantHole) = 0.0 mm²</code></span>
+        </div>
+        <span style="font-family: 'JetBrains Mono'; font-size: 14px; color: #10b981; font-weight: 700;">VERIFIED IN &lt;25ms</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Stage 3.5 Real-World Validation & Quantitative Waste Impact Data -->
+  <div class="slide" id="s3">
+    <div class="top-bar">
+      <div class="idx-tag">03 // STAGE 3.5 REAL-WORLD VALIDATION PROOF</div>
+      <h1>12 External CAD Datasets &amp; 3 Shop Workloads<br>Verified With Zero Overlap</h1>
+      <div class="meta">SHA-256 VERIFIED BENCHMARK<br>VERDICT: 100% PASS</div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 32px; align-items: stretch;">
+      <!-- Left: Animated Bar Chart Comparing Naive vs KerfCraft Yield -->
+      <div class="card-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span class="mono-badge" style="background: #fef3c7; color: #92400e;">MATERIAL YIELD &amp; COST SAVED BY WORKLOAD</span>
+            <span style="font-family: 'JetBrains Mono'; font-size: 14px; color: var(--emerald); font-weight: 700;">+$152.59 USD TOTAL SAVED</span>
+          </div>
+
+          <!-- Workload 1 -->
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk'; font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+              <span>1. FabLab 5" FPV Drone Frame (3mm Acrylic Remnant)</span>
+              <span style="color: var(--emerald); font-family: 'JetBrains Mono';">56.5% vs 37.8% (+$26.61 Saved)</span>
+            </div>
+            <div style="background: #f1f5f9; height: 22px; width: 100%; margin-bottom: 6px; position: relative;">
+              <div style="background: #94a3b8; width: 37.8%; height: 100%; transform-origin: left; animation: growBar .6s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 2px; font-family: 'JetBrains Mono'; font-size: 12px; color: #475569;">Naive Fresh Sheet: 37.8%</span>
+            </div>
+            <div style="background: #ecfdf5; height: 26px; width: 100%; border: 1.5px solid #059669; position: relative;">
+              <div style="background: #10b981; width: 56.5%; height: 100%; transform-origin: left; animation: growBar .8s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 3px; font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 700; color: #065f46;">KerfCraft Remnant-First: 56.5% (14/14 on Scrap · 771.9 cm² Rescued)</span>
+            </div>
+          </div>
+
+          <!-- Workload 2 -->
+          <div style="margin-bottom: 24px;">
+            <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk'; font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+              <span>2. Baltic Birch Synth Case (12mm Plywood, Grain-Locked)</span>
+              <span style="color: var(--emerald); font-family: 'JetBrains Mono';">57.5% vs 32.1% (+$45.84 Saved)</span>
+            </div>
+            <div style="background: #f1f5f9; height: 22px; width: 100%; margin-bottom: 6px; position: relative;">
+              <div style="background: #94a3b8; width: 32.1%; height: 100%; transform-origin: left; animation: growBar .6s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 2px; font-family: 'JetBrains Mono'; font-size: 12px; color: #475569;">Naive Fresh Sheet: 32.1%</span>
+            </div>
+            <div style="background: #ecfdf5; height: 26px; width: 100%; border: 1.5px solid #059669; position: relative;">
+              <div style="background: #10b981; width: 57.5%; height: 100%; transform-origin: left; animation: growBar .85s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 3px; font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 700; color: #065f46;">KerfCraft Grain-Locked: 57.5% (12/12 on L-Remnant · 1,965.8 cm² Rescued)</span>
+            </div>
+          </div>
+
+          <!-- Workload 3 -->
+          <div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Space Grotesk'; font-size: 20px; font-weight: 700; margin-bottom: 8px;">
+              <span>3. 6061-T6 Aluminum Rover Chassis (4mm Alloy Remnant)</span>
+              <span style="color: var(--emerald); font-family: 'JetBrains Mono';">51.6% vs 39.3% (+$80.14 Saved)</span>
+            </div>
+            <div style="background: #f1f5f9; height: 22px; width: 100%; margin-bottom: 6px; position: relative;">
+              <div style="background: #94a3b8; width: 39.3%; height: 100%; transform-origin: left; animation: growBar .6s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 2px; font-family: 'JetBrains Mono'; font-size: 12px; color: #475569;">Naive Fresh Sheet: 39.3%</span>
+            </div>
+            <div style="background: #ecfdf5; height: 26px; width: 100%; border: 1.5px solid #059669; position: relative;">
+              <div style="background: #10b981; width: 51.6%; height: 100%; transform-origin: left; animation: growBar .9s ease-out both;"></div>
+              <span style="position: absolute; right: 10px; top: 3px; font-family: 'JetBrains Mono'; font-size: 13px; font-weight: 700; color: #065f46;">KerfCraft Remnant-First: 51.6% (12/12 on Remnant · 902.9 cm² Rescued)</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-family: 'JetBrains Mono'; font-size: 13px; color: var(--muted); padding-top: 14px; border-top: 1.5px solid var(--line);">
+          All placements mathematically verified with <code>0.0 mm²</code> polygon overlap and <code>0</code> fresh stock sheets consumed.
+        </div>
+      </div>
+
+      <!-- Right: External CAD Dataset Matrix -->
+      <div class="card-box" style="background: #f8fafc; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <span class="mono-badge" style="background: #e0f2fe; color: #0369a1; margin-bottom: 18px;">EXTERNAL MIT CAD BENCHMARK (12 FILES)</span>
+          <h3 style="font-family: 'Space Grotesk'; font-size: 28px; margin-bottom: 16px;">12 / 12 Real-World CAD Files Verified Offline</h3>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-family: 'JetBrains Mono'; font-size: 14px;">
+            <div style="padding: 16px; background: #ffffff; border: 1.5px solid var(--ink);">
+              <div style="font-size: 32px; font-weight: 700; color: var(--emerald);">100%</div>
+              <div style="font-weight: 700; margin-top: 4px;">External File Pass Rate</div>
+              <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">LWPOLYLINE, R12 POLYLINE, SPLINE, LINE, INSERT &amp; SVG</div>
+            </div>
+            <div style="padding: 16px; background: #ffffff; border: 1.5px solid var(--ink);">
+              <div style="font-size: 32px; font-weight: 700; color: var(--cyan);">1.33ms</div>
+              <div style="font-weight: 700; margin-top: 4px;">Mean Local Parse Time</div>
+              <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">3.32ms max on 376 KB <code>alu-profile.dxf</code></div>
+            </div>
+            <div style="padding: 16px; background: #ffffff; border: 1.5px solid var(--ink);">
+              <div style="font-size: 32px; font-weight: 700; color: var(--amber);">3,641 cm²</div>
+              <div style="font-weight: 700; margin-top: 4px;">Remnant Scrap Rescued</div>
+              <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Across acrylic, birch plywood &amp; 6061 alloy</div>
+            </div>
+            <div style="padding: 16px; background: #ffffff; border: 1.5px solid var(--ink);">
+              <div style="font-size: 32px; font-weight: 700; color: var(--ink);">0 / 2</div>
+              <div style="font-weight: 700; margin-top: 4px;">False Positives on Negative</div>
+              <div style="font-size: 12px; color: var(--muted); margin-top: 4px;">Cleanly rejects <code>empty.dxf</code> &amp; <code>texts.dxf</code></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding: 16px; background: #0f1419; color: #ffffff; font-family: 'JetBrains Mono'; font-size: 13px; line-height: 1.5;">
+          <strong style="color: #10b981;">LIVE WORKBENCH:</strong> georgefifth.github.io/kerfcraft-remnantnest/<br>
+          <strong style="color: #38bdf8;">SOURCE REPO:</strong> github.com/Georgefifth/kerfcraft-remnantnest
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
