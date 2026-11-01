@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #0C1014;
+    --bg-panel: #131920;
+    --bg-elevated: #1A222C;
+    --border-hairline: #263240;
+    --text-primary: #F0F4F8;
+    --text-muted: #8A99AD;
+    --accent-amber: #F59E0B;
+    --accent-emerald: #10B981;
+    --accent-cyan: #38BDF8;
+    --danger-crimson: #EF4444;
+  }
+
+  body {
+    background-color: #0C1014;
+    color: #F0F4F8;
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.cad-grid-bg {
+  background-color: #0C1014;
+  background-image:
+    linear-gradient(to right, rgba(38, 50, 64, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(38, 50, 64, 0.45) 1px, transparent 1px),
+    linear-gradient(to right, rgba(56, 189, 248, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px, 100px 100px, 100px 100px;
+}
